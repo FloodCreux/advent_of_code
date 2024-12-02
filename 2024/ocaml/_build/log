@@ -1,0 +1,16 @@
+# dune exec aoc
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /Users/mike/.cache/dune/db
+# Workspace root: /Users/mike/personal/aoc/2024/ocaml
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /etc/profiles/per-user/mike/bin/ocamlc.opt -config > /var/folders/68/67kt2rvj03n96ykmvc5c9t580000gn/T/dune_70dd02_output
