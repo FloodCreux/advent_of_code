@@ -1,3 +1,13 @@
 (library
- (name day1)
- (libraries str))
+ (name tools)
+ (modules tools))
+
+(library
+  (name day1)
+  (modules day1)
+  (libraries str tools))
+
+(library
+  (name day2)
+  (modules day2)
+  (libraries str tools))
