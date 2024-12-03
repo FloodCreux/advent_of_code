@@ -38,7 +38,7 @@ let total_occurrences lst map =
     in
     acc + x * mult
   ) 0 lst
-        
+
 let part_2 file_channel =
   let all_lines = Tools.input_lines file_channel in
   let array1, array2 = split_lines all_lines in

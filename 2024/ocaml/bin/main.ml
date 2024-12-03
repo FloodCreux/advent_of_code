@@ -13,4 +13,12 @@ let () =
   print_newline();
   Printf.printf "\tPart 2: ";
   Day2.part_2 (open_in "input/day2.txt");
+  print_newline();
+  Printf.printf "Day 3: ";
+  print_newline();
+  Printf.printf "\tPart 1: ";
+  Day3.part_1 (open_in "input/test/day3.txt");
+  (* print_newline(); *)
+  (* Printf.printf "\tPart 2: "; *)
+  (* Day2.part_2 (open_in "input/day2.txt"); *)
   print_newline()

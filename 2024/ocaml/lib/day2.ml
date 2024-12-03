@@ -42,19 +42,21 @@ let part_1 file_channel =
   let result = List.fold_left (fun acc x -> 
     acc + (int_of_bool x)
   ) 0 scanned in
-  Printf.printf "%d " result;
-  print_newline ()
+  Printf.printf "%d " result
 
 let rec compare_levels_2 retries levels = 
+  let ordered = in_order levels in
   match levels with
   | [] | [_] -> []
   | x :: y :: tail ->
     let abs = abs_diff x y in
-    let comp = abs > 0 && abs < 4 in
-    if comp || not comp && retries > 0 then
-      comp :: compare_levels_2 0 (y :: tail)
-    else 
-      comp :: compare_levels_2 1 (x :: tail)
+    let comp = ordered && abs > 0 && abs < 4 in
+    if comp || retries > 1 then begin
+      comp :: compare_levels_2 retries (y :: tail)
+    end 
+    else begin
+      compare_levels_2 (retries + 1) (x :: tail)
+    end
 
 let close_levels_2 levels =
   let comparisons = compare_levels_2 0 levels in
@@ -64,7 +66,7 @@ let part_2 file_channel =
   let all_lines = Tools.input_lines file_channel in
   let reports = split_lines all_lines in
   let scanned = List.map (fun level -> 
-    in_order level && close_levels_2 level
+    close_levels_2 level
   ) reports in
   let result = List.fold_left (fun acc x -> 
     acc + (int_of_bool x)

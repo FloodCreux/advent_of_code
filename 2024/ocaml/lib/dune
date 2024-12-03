@@ -11,3 +11,8 @@
   (name day2)
   (modules day2)
   (libraries str tools))
+
+(library
+  (name day3)
+  (modules day3)
+  (libraries str tools))
